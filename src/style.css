@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ------------------------------------------------------------------
+   Design tokens — "dim" theme.
+   Soft charcoal surfaces (not pure black), warm ember accent for
+   energy/calories, calm secondary hues for protein/carbs/fat/water.
+   These map to Tailwind v4 utilities automatically, e.g.
+   --color-primary -> bg-primary, text-primary, border-primary, etc.
+------------------------------------------------------------------- */
+@theme {
+  --font-sans: 'Lexend', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* base surfaces */
+  --color-background: #14161b;
+  --color-foreground: #edeff2;
+
+  --color-card: #1d2026;
+  --color-card-foreground: #edeff2;
+
+  --color-popover: #20232a;
+  --color-popover-foreground: #edeff2;
+
+  --color-border: #2c303a;
+  --color-input: #353a46;
+  --color-ring: #f2994a;
+
+  /* brand / actions */
+  --color-primary: #f2994a;
+  --color-primary-foreground: #1c1206;
+
+  --color-secondary: #2a2e37;
+  --color-secondary-foreground: #edeff2;
+
+  --color-muted: #232730;
+  --color-muted-foreground: #9aa1ae;
+
+  --color-accent: #262a33;
+  --color-accent-foreground: #edeff2;
+
+  --color-destructive: #e2675a;
+  --color-destructive-foreground: #fff5f3;
+
+  --color-success: #4fd1a5;
+  --color-success-foreground: #07261c;
+
+  /* nutrition + tracking hues */
+  --color-protein: #e07a8b;
+  --color-carbs: #f2c572;
+  --color-fat: #6fb8e0;
+  --color-water: #4fa8d8;
+
+  --radius: 0.85rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* visible, accessible focus ring everywhere */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
