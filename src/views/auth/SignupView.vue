@@ -124,7 +124,7 @@ async function createAccount() {
                 id="signup-password"
                 v-model="form.password"
                 :type="showPassword ? 'text' : 'password'"
-                placeholder="At least 6 characters"
+                placeholder="At least 8 characters"
                 autocomplete="new-password"
                 class="pr-11"
                 :invalid="touched && form.password.length > 0 && form.password.length < 6"
@@ -134,7 +134,7 @@ async function createAccount() {
                 <Eye v-else class="h-[18px] w-[18px]" />
               </button>
             </div>
-            <p class="mt-1 text-xs text-muted-foreground">{{ form.password.length }}/6 characters minimum</p>
+            <p class="mt-1 text-xs text-muted-foreground">{{ form.password.length }}/8 characters minimum</p>
           </div>
         </div>
       </template>
