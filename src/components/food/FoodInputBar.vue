@@ -55,13 +55,13 @@ function onEnter(e) {
           <Camera v-else class="h-5 w-5" />
         </button>
 
-        <textarea
+<textarea
   ref="inputRef"
   v-model="text"
   placeholder="What did you eat?"
   maxlength="140"
   rows="1"
-  class="h-11 flex-1 rounded-full border border-input bg-background px-4 text-[15px] text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring resize-none overflow-y-auto"
+  class="h-11 flex-1 rounded-full border border-input bg-background px-4 py-2 text-[15px] leading-6 text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring resize-none overflow-y-auto"
   @keydown.enter="onEnter"
 ></textarea>
 
